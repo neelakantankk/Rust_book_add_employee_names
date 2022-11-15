@@ -22,9 +22,9 @@ pub mod employees {
         }
     }
 
-    fn list_in_department(employees: &mut HashMap<String, Vec<String>>,
+    fn list_in_department(employees: &HashMap<String, Vec<String>>,
         department_to_list : String) {
-        match employees.get_mut(&department_to_list) {
+        match employees.get(&department_to_list) {
             None => println!("No employees found for {}",department_to_list),
             Some(list) => {
                 println!("-----{}-----",department_to_list);
