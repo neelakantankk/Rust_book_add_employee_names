@@ -7,6 +7,7 @@ fn main() {
     let mut employees : HashMap<String, Vec<String>>  = HashMap::new();
     loop {
         println!("What would you like to do?");
+        println!("(Type 'Help' to see available commands.)");
         let mut input = String::new();
 
         io::stdin()
@@ -22,6 +23,14 @@ fn main() {
                 employees::list_employees(&mut employees,&words),
             Some(&"Quit") | Some(&"quit") | Some(&"q") =>
                 break,
+            Some(&"Help") | Some(&"help") => {
+                println!("Valid commands:");
+                println!("\tAdd <Employee Name> to <Department Name>");
+                println!("\tList <Department Name>");
+                println!("\tList Company");
+                println!("\tHelp");
+                println!("\tQuit");
+            },
             None => continue,
             Some(&&_) => {
                 println!("Unknown input");
@@ -29,8 +38,8 @@ fn main() {
                 println!("\tAdd <Employee Name> to <Department Name>");
                 println!("\tList <Department Name>");
                 println!("\tList Company");
+                println!("\tHelp");
                 println!("\tQuit");
-                continue;
             },
         };
 
