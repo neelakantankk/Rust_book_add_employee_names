@@ -16,7 +16,7 @@ fn main() {
 
         let words = input.split_whitespace().collect::<Vec<_>>();
         
-        match words.get(0) {
+        match words.first() {
             Some(&"add") | Some(&"Add") => 
                 employees::add_employee(&mut employees,&words),
             Some(&"List") | Some(&"list") => 

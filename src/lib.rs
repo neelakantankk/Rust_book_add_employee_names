@@ -9,7 +9,7 @@ pub mod employees {
                 if index< words.len()-1 {
                     let employees_in_dep = employees
                         .entry(words[index+1..].join(" "))
-                        .or_insert(Vec::new());
+                        .or_default();
 
                     employees_in_dep
                         .push(words[1..index].join(" "));
